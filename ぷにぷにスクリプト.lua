@@ -81,6 +81,21 @@ local subConfigs = {
         {
             Func = nil,
             Type = "Toggle",
+            Name = "軽量化",
+            lib = "libSGF.so",
+            Offset = {0x28FC2C4,
+                      0x2C1B464,},
+            ONHex = {"81 62 80 52",
+                       "35 00 80 52",},
+            OFFHex = {"81 00 80 52",
+                       "F5 03 01 2A",},
+            value = false,
+            State = true,
+            ToggleStatus = false 
+        },
+        {
+            Func = nil,
+            Type = "Toggle",
             Name = "無効化一括",
             lib = "libSGF.so",
             Offset = {0x3BA9834,
@@ -166,6 +181,30 @@ local subConfigs = {
             Name = "代行者用機能の確認",
             value = false,
             State = true,
+        },
+        {
+            Func = nil,
+            Type = "Toggle",
+            Name = "ニャントス時間停止",
+            lib = "libSGF.so",
+            Offset = 0x3041388,
+            ONHex = "20 00 80 52",
+            OFFHex = "E0 03 15 2A",
+            value = false,
+            State = true,
+            ToggleStatus = false
+        },
+        {
+            Func = nil,
+            Type = "Toggle",
+            Name = "ロボット倍速",
+            lib = "libSGF.so",
+            Offset = 0x388F6FC,
+            ONHex = "00 08 20 1E",
+            OFFHex = "00 08 28 1E",
+            value = false,
+            State = true,
+            ToggleStatus = false
         },
         {
             Func = function() MainMenu() end,
