@@ -78,7 +78,6 @@ function BB()
     local state_coin1 = toggle_coin1 and "コイン1億 OFF" or "コイン1億 ON"
     local state_coin2 = toggle_coin2 and "コイン2億 OFF" or "コイン2億 ON"
     local state_coin3 = toggle_coin3 and "コイン5000万 OFF" or "コイン5000万 ON"
-    local state_100man = toggle_100man and "1000万 OFF" or "1000万 ON"
     local state_coin4 = toggle_coin4 and "コイン1000万 OFF" or "コイン1000万 ON"
     ww=gg.multiChoice({
         state_coin1,
@@ -240,6 +239,57 @@ function exit()
     os.exit()
 end
  
+function DD()
+    local state_baisoku1 = toggle_baisoku1 and "倍速[1] OFF" or "倍速[1] ON"
+    local state_baisoku2 = toggle_baisoku2 and "倍速[2] OFF" or "倍速[2] ON"
+    local state_baisoku3 = toggle_baisoku3 and "倍速[3] OFF" or "倍速[3] ON"
+    ww=gg.multiChoice({
+        state_baisoku1,
+        state_baisoku2,
+        state_baisoku3,
+        "戻る",
+    })
+    if aa == nil then return end
+    if aa[1] == true then b1() end
+    if aa[2] == true then b2() end
+    if aa[3] == true then b3() end
+    if aa[4] == true then Main() end
+    if DD == nil then
+        return
+    end
+end
+
+function b1()
+    if toggle_baisoku1 then
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
+            gg.toast("倍速[1] OFF")
+            else
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "14 C0 A0 52")
+            gg.toast("倍速[1] ON")
+    end
+    toggle_baisoku1 = not toggle_baisoku1
+end
+function b2()
+    if toggle_baisoku2 then
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
+            gg.toast("倍速[2] OFF")
+            else
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "94 7D A1 52")
+            gg.toast("倍速[2] ON")
+    end
+    toggle_baisoku2 = not toggle_baisoku2
+end
+ function b3()
+    if toggle_baisoku3 then
+        setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
+        gg.toast("倍速[3] OFF")
+    else
+        setHexMemory("libcocos2dcpp.so", 0x180B428, "14 60 A0 52")
+        gg.toast("倍速[3] ON")
+end
+    toggle_baisoku3 = not toggle_baisoku3
+end
+
  
  
 while true do
