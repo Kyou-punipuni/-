@@ -233,12 +233,6 @@ function sh6()
         toggle_rs = not toggle_rs
 end
 
-function exit()
-    gg.toast("終了!")
-    gg.clearResults()
-    os.exit()
-end
- 
 function DD()
     local state_baisoku1 = toggle_baisoku1 and "倍速[1] OFF" or "倍速[1] ON"
     local state_baisoku2 = toggle_baisoku2 and "倍速[2] OFF" or "倍速[2] ON"
@@ -289,6 +283,14 @@ end
 end
     toggle_baisoku3 = not toggle_baisoku3
 end
+
+function exit()
+    gg.toast("終了!")
+    gg.clearResults()
+    os.exit()
+end
+ 
+
 
  
  
