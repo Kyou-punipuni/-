@@ -65,14 +65,14 @@ state_payermax = false
 state_gs = false
 state_rs = false
 --倍速menu--
-state_baisoku1
-state_baisoku2
-state_baisoku3
+state_baisoku1 = false
+state_baisoku2 = false
+state_baisoku3 = false
 --メダルmenu--
-state_medal1
-state_medal2
-state_medal3
-state_medal4
+state_medal1 = false
+state_medal2 = false
+state_medal3 = false
+state_medal4 = false
 
 function BB()
     local state_coin1 = toggle_coin1 and "コイン1億 OFF" or "コイン1億 ON"
