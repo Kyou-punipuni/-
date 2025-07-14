@@ -39,6 +39,7 @@ function Main()
 	local menu = gg.choice({
         "Coinメニュー",
         "Mainメニュー",
+        "倍速メニュー",
         "スクリプト終了",
     }, nil, "スクリプト制作：きょう\nツムツムスクリプトv" .. gg.getTargetInfo().versionName)
 
