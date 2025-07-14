@@ -40,7 +40,7 @@ function Main()
         "Coinメニュー",
         "Mainメニュー",
         "スクリプト終了",
-    }, nil, "スクリプト制作：きょう\nぷにぷにスクリプトv" .. gg.getTargetInfo().versionName)
+    }, nil, "スクリプト制作：きょう\nツムツムスクリプトv" .. gg.getTargetInfo().versionName)
 
     if menu == nil then
         return
