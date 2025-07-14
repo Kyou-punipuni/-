@@ -47,7 +47,9 @@ function Main()
     else
         if menu == 1 then BB() end
         if menu == 2 then CC() end
-        if menu == 3 then exit() end
+        if menu == 3 then DD() end
+        if menu == 4 then EE() end
+        if menu == 5 then exit() end
     end
 end
 --CoinMenu--
@@ -62,6 +64,15 @@ state_tumumax = false
 state_payermax = false
 state_gs = false
 state_rs = false
+--倍速menu--
+state_baisoku1
+state_baisoku2
+state_baisoku3
+--メダルmenu--
+state_medal1
+state_medal2
+state_medal3
+state_medal4
 
 function BB()
     local state_coin1 = toggle_coin1 and "コイン1億 OFF" or "コイン1億 ON"
@@ -89,40 +100,40 @@ end
 
 function m1()
     if toggle_coin1 then
-            setHexMemory("libSGF.so", 0x180B428, "F4 03 01 2A")
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
             gg.toast("コイン1億 OFF")
             else
-            setHexMemory("libSGF.so", 0x180B428, "14 C0 A0 52")
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "14 C0 A0 52")
             gg.toast("コイン1億 ON")
     end
     toggle_coin1 = not toggle_coin1
 end
 function m2()
     if toggle_coin2 then
-            setHexMemory("libSGF.so", 0x180B428, "F4 03 01 2A")
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
             gg.toast("コイン2億 OFF")
             else
-            setHexMemory("libSGF.so", 0x180B428, "94 7D A1 52")
+            setHexMemory("libcocos2dcpp.so", 0x180B428, "94 7D A1 52")
             gg.toast("コイン2億 ON")
     end
     toggle_coin2 = not toggle_coin2
 end
  function m3()
     if toggle_coin3 then
-        setHexMemory("libSGF.so", 0x180B428, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
         gg.toast("コイン5000万 OFF")
     else
-        setHexMemory("libSGF.so", 0x180B428, "14 60 A0 52")
+        setHexMemory("libcocos2dcpp.so", 0x180B428, "14 60 A0 52")
         gg.toast("コイン5000万 ON")
 end
     toggle_coin3 = not toggle_coin3
 end
 function m4()
     if toggle_coin4 then
-        setHexMemory("libSGF.so", 0x180B428, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x180B428, "F4 03 01 2A")
         gg.toast("コイン1000万 OFF")
         else
-        setHexMemory("libSGF.so", 0x180B428, "34 13 A0 52")
+        setHexMemory("libcocos2dcpp.so", 0x180B428, "34 13 A0 52")
         gg.toast("コイン1000万 ON")
 end
     
@@ -161,30 +172,30 @@ end
 
 function sh1()
     if toggle_soku then
-            setHexMemory("libSGF.so", 0x1FE7908, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x1FE7908, "00 20 21 1E")
             gg.toast("即終了 OFF")
             else
-            setHexMemory("libSGF.so", 0x1FE7908, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x1FE7908, "00 10 24 1E")
             gg.toast("即終了 ON")
     end
     toggle_soku = not toggle_soku
 end
  function sh2()
     if toggle_soku1 then
-        setHexMemory("libSGF.so", 0x1828EBC, "21 07 00 54")
+        setHexMemory("libcocos2dcpp.so", 0x1828EBC, "21 07 00 54")
         gg.toast("繋ぎ終了 OFF")
     else
-        setHexMemory("libSGF.so", 0x1828EBC, "20 07 00 54")
+        setHexMemory("libcocos2dcpp.so", 0x1828EBC, "20 07 00 54")
         gg.toast("繋ぎ終了 ON")
 end
     toggle_soku1 = not toggle_soku1
 end
 function sh3()
     if toggle_tumumax then
-        setHexMemory("libSGF.so", 0x18238A4, "21 05 00 11")
+        setHexMemory("libcocos2dcpp.so", 0x18238A4, "21 05 00 11")
         gg.toast("ツムレベルMAX OFF")
         else
-        setHexMemory("libSGF.so", 0x18238A4, "01 6A 98 52")
+        setHexMemory("libcocos2dcpp.so", 0x18238A4, "01 6A 98 52")
         gg.toast("ムツレベルMAX ON")
 end
     
@@ -192,10 +203,10 @@ end
 end
 function sh4()
      if toggle_payermax then
-        setHexMemory("libSGF.so", 0x18334D8, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x18334D8, "F4 03 01 2A")
         gg.toast("プレイヤーレベルMAX OFF")
         else
-        setHexMemory("libSGF.so", 0x18334D8, "F4 0F 27 32")
+        setHexMemory("libcocos2dcpp.so", 0x18334D8, "F4 0F 27 32")
         gg.toast("プレイヤーレベルMAX ON")
     end
         toggle_payermax = not toggle_payermax
@@ -203,10 +214,10 @@ end
 
 function sh5()
      if toggle_gs then
-        setHexMemory("libSGF.so", 0x1861830, "FF 43 01 D1")
+        setHexMemory("libcocos2dcpp.so", 0x1861830, "FF 43 01 D1")
         gg.toast("ガチャ演出スキップ OFF")
         else
-        setHexMemory("libSGF.so", 0x1861830, "C0 03 5F D6")
+        setHexMemory("libcocos2dcpp.so", 0x1861830, "C0 03 5F D6")
         gg.toast("ガチャ演出スキップ ON")
     end
         toggle_gs = not toggle_gs
@@ -214,10 +225,10 @@ end
 
 function sh6()
      if toggle_rs then
-        setHexMemory("libSGF.so", 0x18135E0, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
         gg.toast("リザルトスキップ OFF")
         else
-        setHexMemory("libSGF.so", 0x18135E0, "34 00 80 52")
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
         gg.toast("リザルトスキップ ON")
     end
         toggle_rs = not toggle_rs
