@@ -68,7 +68,7 @@ state_gs = false
 state_rs = false
 state_tumu1 = false
 state_zen = false
-state_aout = false
+state_auto = false
 --倍速menu--
 state_baisoku1 = false
 state_baisoku2 = false
@@ -154,7 +154,7 @@ function CC()
     local state_rs = toggle_rs and "リザルトスキップ OFF" or "リザルトスキップ ON"
     local state_tumu1 = toggle_tumu1 and "1ツムでも繋がる OFF" or "1ツムでも繋がる ON"
     local state_zen = toggle_zen and "全ツム繋がる OFF" or "全ツム繋がる ON"
-    local state_aout = toggle_auto and "オートチェーン OFF" or "オートチェーン ON"
+    local state_auto = toggle_auto and "オートチェーン OFF" or "オートチェーン ON"
     xx=gg.multiChoice({
         state_soku,
         state_soku1,
