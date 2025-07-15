@@ -37,8 +37,8 @@ end
 gg.alert("スクリプト制作：きょう", 'start')
 function Main()
 	local menu = gg.choice({
-        "Coinメニュー",
-        "Mainメニュー",
+        "コインメニュー",
+        "メインメニュー",
         "倍速メニュー",
         "メダルメニュー",
         "スクリプト終了",
