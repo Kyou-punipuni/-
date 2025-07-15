@@ -249,10 +249,10 @@ end
 
 function sh7()
      if toggle_tumu1 then
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x182CB28, "1F 00 08 6B")
         gg.toast("1ツムでも繋がる OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        setHexMemory("libcocos2dcpp.so", 0x182CB28, "1F 00 00 6B")
         gg.toast("1ツムでも繋がる ON")
     end
         toggle_tumu1 = not toggle_tumu1
@@ -260,10 +260,10 @@ end
 
 function sh8()
      if toggle_zen then
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x1C6273C, "81 03 80 52")
         gg.toast("全ツム繋がる OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        setHexMemory("libcocos2dcpp.so", 0x1C6273C, "81 03 00 37")
         gg.toast("全ツム繋がる ON")
     end
         toggle_zen = not toggle_zen
@@ -271,10 +271,10 @@ end
 
 function sh9()
      if toggle_auto then
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x1D44490, "08 20 45 B9")
         gg.toast("オートチェーン OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        setHexMemory("libcocos2dcpp.so", 0x1D44490, "01 6A 98 52")
         gg.toast("オートチェーン ON")
     end
         toggle_auto = not toggle_auto
