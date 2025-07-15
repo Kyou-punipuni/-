@@ -66,6 +66,9 @@ state_tumumax = false
 state_payermax = false
 state_gs = false
 state_rs = false
+state_tumu1 = false
+state_zen = false
+state_aout = false
 --倍速menu--
 state_baisoku1 = false
 state_baisoku2 = false
@@ -149,6 +152,9 @@ function CC()
     local state_payermax = toggle_payermax and "プレイヤーレベルMAX OFF" or "プレイヤーレベルMAX ON"
     local state_gs = toggle_gs and "ガチャ演出スキップ OFF" or "ガチャ演出スキップ ON"
     local state_rs = toggle_rs and "リザルトスキップ OFF" or "リザルトスキップ ON"
+    local state_tumu1 = toggle_tumu1 and "1ツムでも繋がる OFF" or "1ツムでも繋がる ON"
+    local state_zen = toggle_zen and "全ツム繋がる OFF" or "全ツム繋がる ON"
+    local state_aout = toggle_auto and "オートチェーン OFF" or "オートチェーン ON"
     xx=gg.multiChoice({
         state_soku,
         state_soku1,
@@ -156,6 +162,9 @@ function CC()
         state_payermax,
         state_gs,
         state_rs,
+        state_tumu1,
+        state_zen,
+        state_auto,
         "戻る",
     })
     if xx == nil then return end
@@ -165,7 +174,10 @@ function CC()
     if xx[4] == true then sh4() end
     if xx[5] == true then sh5() end
     if xx[6] == true then sh6() end
-    if xx[7] == true then Main() end
+    if xx[7] == true then sh7() end
+    if xx[8] == true then sh8() end
+    if xx[9] == true then sh9() end
+    if xx[10] == true then Main() end
     if CC == nil then
         return
     end
@@ -233,6 +245,39 @@ function sh6()
         gg.toast("リザルトスキップ ON")
     end
         toggle_rs = not toggle_rs
+end
+
+function sh7()
+     if toggle_tumu1 then
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        gg.toast("1ツムでも繋がる OFF")
+        else
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        gg.toast("1ツムでも繋がる ON")
+    end
+        toggle_tumu1 = not toggle_tumu1
+end
+
+function sh8()
+     if toggle_zen then
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        gg.toast("全ツム繋がる OFF")
+        else
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        gg.toast("全ツム繋がる ON")
+    end
+        toggle_zen = not toggle_zen
+end
+
+function sh9()
+     if toggle_auto then
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        gg.toast("オートチェーン OFF")
+        else
+        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        gg.toast("オートチェーン ON")
+    end
+        toggle_auto = not toggle_auto
 end
 
 function DD()
