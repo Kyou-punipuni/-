@@ -1,9 +1,11 @@
+-- グローバルで宣言
+startAddress = nil
+endAddress = nil
+
 function isim(libs)
-    local startAddress, endAddress
     if type(libs) ~= "table" then
         libs = {libs}
     end
-
     for _, lib in ipairs(libs) do
         local aralik = gg.getRangesList(lib)
         for i, v in ipairs(aralik) do
@@ -17,11 +19,15 @@ function isim(libs)
     return nil, nil
 end
 
-local startAddress, endAddress = isim({"split_config.arm64_v8a.apk", "libSGF"})
-
 function setHexMemory(libisim, offset, hex)
-    isim(libisim)
-    t, hepsi = {}, 0
+    startAddress, endAddress = isim(libisim)  -- ★ ここ重要！
+    if not startAddress then
+        gg.alert("メモリアドレスが取得できません")
+        return false
+    end
+
+    local t = {}
+    local hepsi = 0
     for h in string.gmatch(hex, "%S%S") do
         table.insert(t, {
             address = startAddress + offset + hepsi,
@@ -30,11 +36,17 @@ function setHexMemory(libisim, offset, hex)
         })
         hepsi = hepsi + 1
     end
-    sonuc = gg.setValues(t)
-    if type(sonuc) ~= 'string' then return true else gg.alert(sonuc) return false end
+
+    local sonuc = gg.setValues(t)
+    if type(sonuc) ~= 'string' then
+        return true
+    else
+        gg.alert(sonuc)
+        return false
+    end
 end
 
-gg.alert("スクリプト制作：きょう", 'start')
+gg.alert("made by きょう", "start")
 function Main()
 	local menu = gg.choice({
         "基本メニュー",
