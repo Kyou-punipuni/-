@@ -817,7 +817,7 @@ function MainMenu()
     "Other Menu",
     "Drop Menu", 
     "機能復元",
-    "スクリプト終了"}, nil, "めうすとScript\nぷにぷに 4.137.0")
+    "スクリプト終了"}, nil, "きょうScript\nぷにぷに 4.137.0")
     if menu == 1 then
         SubMenu("Main")
     elseif menu == 2 then
