@@ -522,13 +522,13 @@ function Baisokuu(value)
     local hexValues = {
         [1] = "EB FE FF 54",
         [2] = "00 10 28 1E",
-        [3] = "00 D0 28 1E",
-        [4] = "00 50 28 1E",
-        [5] = "00 10 2A 1E"
+        [3] = "00 90 28 1E",
+        [4] = "00 90 29 1E",
+        [5] = "00 10 2E 1E"
     }
 
     if hexValues[value] then
-        setHexMemory("libSGF.so", 0x32DC260, hexValues[value])
+        setHexMemory("libSGF.so", 0x29322A4, hexValues[value])
         gg.toast("倍速: " .. (value == 1 and "OFF" or value .. "倍速を設定しました。"))
     else
         gg.alert("エラー: 無効な倍速値です！ (入力値: " .. tostring(value) .. ")")
