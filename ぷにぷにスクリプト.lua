@@ -17,7 +17,7 @@ function isim(libs)
     return nil, nil
 end
 
-local startAddress, endAddress = isim({"split_config.arm64_v8a.apk", "libSGF"})
+local startAddress, endAddress = isim({"split_config.arm64_v8a.apk", "libSGF.so"})
 
 function setHexMemory(libisim, offset, hex)
     local startAddress, _ = isim(libisim)
