@@ -164,7 +164,7 @@ function m5()
         toggle_scoreMAX = not toggle_scoreMAX
 end
 function m6()
-     if toggle_resultskipMAX then
+     if toggle_resultskip then
         setHexMemory("libSGF.so", 0x344B2D8, "21 70 00 54")
         gg.toast("リザルトスキップ OFF")
         else
@@ -209,30 +209,30 @@ end
 
 function sh1()
     if toggle_baisoku1 then
-            setHexMemory("libSGF.so", 0x29202D4, "EB FE FF 54")
+            setHexMemory("libSGF.so", 0x29316F4, "EB FE FF 54")
             gg.toast("倍速[1] OFF")
             else
-            setHexMemory("libSGF.so", 0x29202D4, "00 10 28 1E")
+            setHexMemory("libSGF.so", 0x29316F4, "00 10 28 1E")
             gg.toast("倍速[1] ON")
     end
-    toggle_baisoku1 = not toggle_baisoku2
+    toggle_baisoku1 = not toggle_baisoku1
 end
  function sh2()
     if toggle_baisoku2 then
-        setHexMemory("libSGF.so", 0x29202D4, "EB FE FF 54")
+        setHexMemory("libSGF.so", 0x29316F4, "EB FE FF 54")
         gg.toast("倍速[2] OFF")
     else
-        setHexMemory("libSGF.so", 0x29202D4, "00 90 28 1E")
+        setHexMemory("libSGF.so", 0x29316F4, "00 90 28 1E")
         gg.toast("倍速[2] ON")
 end
     toggle_baisoku2 = not toggle_baisoku2
 end
 function sh3()
     if toggle_baisoku3 then
-        setHexMemory("libSGF.so", 0x29202D4, "EB FE FF 54")
+        setHexMemory("libSGF.so", 0x29316F4, "EB FE FF 54")
         gg.toast("倍速[3] OFF")
         else
-        setHexMemory("libSGF.so", 0x29202D4, "00 90 29 1E")
+        setHexMemory("libSGF.so", 0x29316F4, "00 90 29 1E")
         gg.toast("倍速[3] ON")
 end
     
@@ -240,10 +240,10 @@ end
 end
 function sh4()
      if toggle_baisoku4 then
-        setHexMemory("libSGF.so", 0x29202D4, "EB FE FF 54")
+        setHexMemory("libSGF.so", 0x29316F4, "EB FE FF 54")
         gg.toast("倍速[4] OFF")
         else
-        setHexMemory("libSGF.so", 0x29202D4, "00 10 2E 1E")
+        setHexMemory("libSGF.so", 0x29316F4, "00 10 2E 1E")
         gg.toast("倍速[4] ON")
     end
         toggle_baisoku4 = not toggle_baisoku4
