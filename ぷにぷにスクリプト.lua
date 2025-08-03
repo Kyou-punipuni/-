@@ -114,40 +114,40 @@ end
 
 function m1()
     if toggle_wanpan then
-            setHexMemory("libSGF.so", 0x325E83C, "81 00 00 54")
+            setHexMemory("libSGF.so", 0x32521E8, "81 00 00 54")
             gg.toast("ワンパン OFF")
             else
-            setHexMemory("libSGF.so", 0x325E83C, "80 00 00 54")
+            setHexMemory("libSGF.so", 0x32521E8, "80 00 00 54")
             gg.toast("ワンパン ON")
     end
     toggle_wanpan = not toggle_wanpan
 end
 function m2()
     if toggle_muteki then
-            setHexMemory("libSGF.so", 0x345BEC4, "E1 07 40 B9")
+            setHexMemory("libSGF.so", 0x34802F0, "F4 3A 40 94")
             gg.toast("無敵 OFF")
             else
-            setHexMemory("libSGF.so", 0x345BEC4, "00 08 21 1E")
+            setHexMemory("libSGF.so", 0x34802F0, "1F 20 03 D5")
             gg.toast("無敵 ON")
     end
     toggle_muteki = not toggle_muteki
 end
  function m3()
     if toggle_9man then
-        setHexMemory("libSGF.so", 0x325E83C, "F3 03 01 2A")
+        setHexMemory("libSGF.so", 0x32521E8, "F3 03 01 2A")
         gg.toast("9万ダメージ OFF")
     else
-        setHexMemory("libSGF.so", 0x325E83C, "F3 07 11 32")
+        setHexMemory("libSGF.so", 0x32521E8, "F3 07 11 32")
         gg.toast("9万ダメージ ON")
 end
     toggle_9man = not toggle_9man
 end
 function m4()
     if toggle_100man then
-        setHexMemory("libSGF.so", 0x325E83C, "F3 03 01 2A")
+        setHexMemory("libSGF.so", 0x32521E8, "F3 03 01 2A")
         gg.toast("100万ダメージ OFF")
         else
-        setHexMemory("libSGF.so", 0x325E83C, "13 02 A0 52")
+        setHexMemory("libSGF.so", 0x32521E8, "13 02 A0 52")
         gg.toast("100万ダメージ ON")
 end
     
@@ -155,20 +155,20 @@ end
 end
 function m5()
      if toggle_scoreMAX then
-        setHexMemory("libSGF.so", 0x3458130, "01 00 14 8B")
+        setHexMemory("libSGF.so", 0x347C560, "01 00 14 8B")
         gg.toast("スコア1.6億 OFF")
         else
-        setHexMemory("libSGF.so", 0x3458130, "41 31 A1 D2")
+        setHexMemory("libSGF.so", 0x347C560, "41 31 A1 D2")
         gg.toast("スコア1.6億 ON")
     end
         toggle_scoreMAX = not toggle_scoreMAX
 end
 function m6()
      if toggle_resultskip then
-        setHexMemory("libSGF.so", 0x344B2D8, "21 70 00 54")
+        setHexMemory("libSGF.so", 0x346F708, "21 70 00 54")
         gg.toast("リザルトスキップ OFF")
         else
-        setHexMemory("libSGF.so", 0x344B2D8, "CO 69 00 54")
+        setHexMemory("libSGF.so", 0x346F708, "CO 69 00 54")
         gg.toast("リザルトスキップ ON")
     end
         toggle_resultskip = not toggle_resultskip
@@ -276,20 +276,20 @@ function DD()
 end
 function t1()
     if toggle_tienn1 then
-            setHexMemory("libSGF.so", 0x3080A00, "00 18 28 1E")
+            setHexMemory("libSGF.so", 0x30A4498, "00 18 28 1E")
             gg.toast("遅延[1] OFF")
             else
-            setHexMemory("libSGF.so", 0x3080A00, "00 70 2A 1E")
+            setHexMemory("libSGF.so", 0x30A4498, "00 70 2A 1E")
             gg.toast("遅延[1] ON")
 end
             toggle_tienn1 = not toggle_tienn1
 end
 function t2()
     if toggle_tienn2 then
-        setHexMemory("libSGF.so", 0x3080A00, "00 18 28 1E")
+        setHexMemory("libSGF.so", 0x30A4498, "00 18 28 1E")
         gg.toast("遅延[2] OFF")
         else
-        setHexMemory("libSGF.so", 0x3080A00, "00 50 29 1E")
+        setHexMemory("libSGF.so", 0x30A4498, "00 50 29 1E")
         gg.toast("遅延[2] ON")
     end
     toggle_tienn2 = not toggle_tienn2
@@ -297,10 +297,10 @@ end
 
 function t3()
     if toggle_tienn3 then
-        setHexMemory("libSGF.so", 0x3080A00, "00 18 28 1E")
+        setHexMemory("libSGF.so", 0x30A4498, "00 18 28 1E")
         gg.toast("遅延[3] OFF")
         else
-        setHexMemory("libSGF.so", 0x3080A00, "00 D0 28 1E")
+        setHexMemory("libSGF.so", 0x30A4498, "00 D0 28 1E")
         gg.toast("遅延[3] ON")
     end
     toggle_tienn3 = not toggle_tienn3
@@ -308,10 +308,10 @@ end
 
 function t4()
     if toggle_tienn4 then
-        setHexMemory("libSGF.so", 0x3080A00, "00 18 28 1E")
+        setHexMemory("libSGF.so", 0x30A4498, "00 18 28 1E")
         gg.toast("遅延[4] OFF")
         else
-        setHexMemory("libSGF.so", 0x3080A00, "00 10 28 1E")
+        setHexMemory("libSGF.so", 0x30A4498, "00 10 28 1E")
         gg.toast("遅延[4] ON")
     end
     toggle_tienn4 = not toggle_tienn4
@@ -348,20 +348,20 @@ local state_kaiwa = toggle_kaiwa and "会話無効 OFF" or "会話無効 ON"
 end
 function d1()
     if toggle_kaiwa then
-            setHexMemory("libSGF.so", 0x3F8F1D4, "FF 83 01 D1")
+            setHexMemory("libSGF.so", 0x3FB59AC, "FF 83 01 D1")
             gg.toast("会話無効 OFF")
             else
-            setHexMemory("libSGF.so", 0x3F8F1D4, "C0 03 5F D6")
+            setHexMemory("libSGF.so", 0x3FB59AC, "C0 03 5F D6")
             gg.toast("会話無効 ON")
 end
             toggle_kaiwa = not toggle_kaiwa
 end
 function d2()
     if toggle_mushimegane then
-        setHexMemory("libSGF.so", 0x3B8CD78, "FF 83 81 D1")
+        setHexMemory("libSGF.so", 0x3BB3AA4, "FF 83 81 D1")
         gg.toast("虫眼鏡無効 OFF")
         else
-        setHexMemory("libSGF.so", 0x3B8CD78, "C0 03 5F D6")
+        setHexMemory("libSGF.so", 0x3BB3AA4, "C0 03 5F D6")
         gg.toast("虫眼鏡無効 ON")
     end
     toggle_mushimegane = not toggle_mushimegane
@@ -369,10 +369,10 @@ end
 
 function d3()
     if toggle_fuin then
-        setHexMemory("libSGF.so", 0x3BA9834, "FF 43 04 D1")
+        setHexMemory("libSGF.so", 0x3BD0560, "FF 43 04 D1")
         gg.toast("封印無効 OFF")
         else
-        setHexMemory("libSGF.so", 0x3BA9834, "C0 03 5F D6")
+        setHexMemory("libSGF.so", 0x3BD0560, "C0 03 5F D6")
         gg.toast("封印無効 ON")
     end
     toggle_fuin = not toggle_fuin
@@ -391,10 +391,10 @@ end
 
 function d5()
     if toggle_oshirase then
-        setHexMemory("libSGF.so", 0x3F5D6B0, "28 02 00 34")
+        setHexMemory("libSGF.so", 0x3F83E88, "28 02 00 34")
         gg.toast("お知らせ無効 OFF")
         else
-        setHexMemory("libSGF.so", 0x3F5D6B0, "11 00 00 14")
+        setHexMemory("libSGF.so", 0x3F83E88, "11 00 00 14")
         gg.toast("お知らせ無効 ON")
     end
     toggle_oshirase = not toggle_oshirase
@@ -402,10 +402,10 @@ end
 
 function d6()
     if toggle_rogubo then
-        setHexMemory("libSGF.so", 0x3F65E24, "48 07 00 34")
+        setHexMemory("libSGF.so", 0x3F8C5FC, "48 07 00 34")
         gg.toast("ログインボーナス無効 OFF")
         else
-        setHexMemory("libSGF.so", 0x3F65E24, "3A 00 00 14")
+        setHexMemory("libSGF.so", 0x3F8C5FC, "3A 00 00 14")
         gg.toast("ログインボーナス無効 ON")
     end
     toggle_rogubo = not toggle_rogubo
