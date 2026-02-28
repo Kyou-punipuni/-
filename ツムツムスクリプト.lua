@@ -40,6 +40,7 @@ function Main()
         "コインメニュー",
         "メダルメニュー", 
         "メインメニュー",
+        "即終了(𝒃𝒖𝒕𝒕𝒐𝒏)
         "スクリプト終了",
     }, nil, "ScriptDeveloper：きょう\nTumuTumuScript" .. gg.getTargetInfo().versionName)
 
@@ -49,7 +50,8 @@ function Main()
         if menu == 1 then BB() end
         if menu == 2 then CC() end
         if menu == 3 then DD() end
-        if menu == 4 then exit() end
+        if menu == 4 then EE() end
+        if menu == 5 then exit() end
     end
 end
 --CoinMenu--
@@ -73,7 +75,8 @@ state_tumumax = false
 state_payermax = false
 state_gs = false
 state_rs = false
-
+--即終了(𝒃𝒖𝒕𝒕𝒐𝒏--
+state_sokuB = false
 function BB()
     local state_coin1 = toggle_coin1 and "コイン50万 OFF" or "コイン50万 ON"
     local state_coin2 = toggle_coin2 and "コイン100万 OFF" or "コイン100万 ON"
