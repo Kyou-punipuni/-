@@ -1,5 +1,5 @@
 local date = os.date("%Y%m%d")
-if date >= "20250430" then
+if date >= "20260315" then
 gg.alert("スクリプトの期限が切れました")
 os.exit()
 end
