@@ -40,7 +40,7 @@ function Main()
         "コインメニュー",
         "メダルメニュー", 
         "メインメニュー",
-        "即終了(𝒃𝒖𝒕𝒕𝒐𝒏)
+        "即終了(𝒃𝒖𝒕𝒕𝒐𝒏)",
         "スクリプト終了",
     }, nil, "ScriptDeveloper：きょう\nTumuTumuScript" .. gg.getTargetInfo().versionName)
 
@@ -75,8 +75,17 @@ state_tumumax = false
 state_payermax = false
 state_gs = false
 state_rs = false
---即終了(𝒃𝒖𝒕𝒕𝒐𝒏--
-state_sokuB = false
+--即終了(𝒃𝒖𝒕𝒕𝒐𝒏)--
+function EE()
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
+end
 function BB()
     local state_coin1 = toggle_coin1 and "コイン50万 OFF" or "コイン50万 ON"
     local state_coin2 = toggle_coin2 and "コイン100万 OFF" or "コイン100万 ON"
