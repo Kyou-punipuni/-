@@ -75,6 +75,9 @@ state_tumumax = false
 state_payermax = false
 state_gs = false
 state_rs = false
+state_sp1 = false
+state_sp2 = false
+state_sp3 = false
 --即終了(𝒃𝒖𝒕𝒕𝒐𝒏)--
 function EE()
             setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
@@ -379,6 +382,9 @@ function DD()
     local state_payermax = toggle_payermax and "プレイヤーレベルMAX OFF" or "プレイヤーレベルMAX ON"
     local state_gs = toggle_gs and "ガチャ演出スキップ OFF" or "ガチャ演出スキップ ON"
     local state_rs = toggle_rs and "リザルトスキップ OFF" or "リザルトスキップ ON"
+    local state_sp1 = toggle_sp1 and "倍速3 OFF" or "倍速3 ON"
+    local state_sp2 = toggle_sp2 and "倍速5 OFF" or "倍速5 ON"
+    local state_sp3 = toggle_sp3 and "倍速10 OFF" or "倍速10 ON"
     xx=gg.multiChoice({
         state_soku,
         state_soku1,
@@ -386,6 +392,9 @@ function DD()
         state_payermax,
         state_gs,
         state_rs,
+        state_sp1,
+        state_sp2,
+        state_sp3,
         "戻る",
     })
     if xx == nil then return end
@@ -395,7 +404,10 @@ function DD()
     if xx[4] == true then sh4() end
     if xx[5] == true then sh5() end
     if xx[6] == true then sh6() end
-    if xx[7] == true then Main() end
+    if xx[7] == true then sh7() end
+    if xx[8] == true then sh8() end
+    if xx[9] == true then sh9() end
+    if xx[10] == true then Main() end
     if DD == nil then
         return
     end
@@ -463,6 +475,39 @@ function sh6()
         gg.toast("リザルトスキップ ON")
     end
         toggle_rs = not toggle_rs
+end
+
+function sh7()
+     if toggle_sp1 then
+        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 18 21 1E")
+        gg.toast("倍速3 OFF")
+        else
+        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 D0 29 1E")
+        gg.toast("倍速3 ON")
+    end
+        toggle_sp1 = not toggle_sp1
+end
+
+function sh8()
+     if toggle_sp2 then
+        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 18 21 1E")
+        gg.toast("倍速5 OFF")
+        else
+        setHexMemory("libcocos2dcpp.so", 0x2341788, 00 90 20 1E"")
+        gg.toast("倍速5 ON")
+    end
+        toggle_sp2 = not toggle_sp2
+end
+
+function sh9()
+     if toggle_sp3 then
+        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 18 21 1E")
+        gg.toast("倍速10 OFF")
+        else
+        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 10 24 1E")
+        gg.toast("倍速10 ON")
+    end
+        toggle_sp3 = not toggle_sp3
 end
 
 function exit()
