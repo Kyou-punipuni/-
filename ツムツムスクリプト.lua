@@ -1,9 +1,3 @@
-local date = os.date("%Y%m%d")
-if date >= "20260431" then
-gg.alert("スクリプトの期限が切れました")
-os.exit()
-end
-
 function isim(libs)
     local startAddress, endAddress
     if type(libs) ~= "table" then
@@ -40,16 +34,16 @@ function setHexMemory(libisim, offset, hex)
     if type(sonuc) ~= 'string' then return true else gg.alert(sonuc) return false end
 end
 
-gg.alert("ScriptDeveloper：きょう", 'start')
+gg.alert("《ScriptDeveloper ：きょう》", 'start')
 function Main()
 	local menu = gg.choice({
-        "コインメニュー",
-        "メダルメニュー", 
-        "メインメニュー",
-        "即終了(𝒃𝒖𝒕𝒕𝒐𝒏)",
-        "スクリプト終了",
-    }, nil, "ScriptDeveloper：きょう\nTumuTumuScript" .. gg.getTargetInfo().versionName)
-
+        "《コインメニュー》",
+        "《メダルメニュー》", 
+        "《メインメニュー》",
+        "《即終了(𝒃𝒖𝒕𝒕𝒐𝒏)》",
+        "《スクリプト終了》",
+    }, nil, "《ScriptDeveloper ：きょう》\n《TumuTumuScript》" .. gg.getTargetInfo().versionName)
+    
     if menu == nil then
         return
     else
@@ -86,26 +80,26 @@ state_sp2 = false
 state_sp3 = false
 --即終了(ボタン式)
 function EE()
-             setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+             setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 10 24 1E")
 
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 10 24 1E")
 
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 10 24 1E")
 
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 10 24 1E")
 
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 20 21 1E")
 end
 function BB()
-    local state_coin1 = toggle_coin1 and "コイン50万 OFF" or "コイン50万 ON"
-    local state_coin2 = toggle_coin2 and "コイン100万 OFF" or "コイン100万 ON"
-    local state_coin3 = toggle_coin3 and "コイン1000万 OFF" or "コイン1000万 ON"
-    local state_coin4 = toggle_coin4 and "コイン5000万 OFF" or "コイン5000万 ON"
-    local state_coin5 = toggle_coin5 and "コイン1億 OFF" or "コイン1億 ON"
-    local state_coin6 = toggle_coin6 and "コイン2億 OFF" or "コイン2億 ON"
+    local state_coin1 = toggle_coin1 and "《コイン50万 OFF》" or "《コイン50万 ON》"
+    local state_coin2 = toggle_coin2 and "《コイン100万 OFF》" or "《コイン100万 ON》"
+    local state_coin3 = toggle_coin3 and "《コイン1000万 OFF》" or "《コイン1000万 ON》"
+    local state_coin4 = toggle_coin4 and "《コイン5000万 OFF》" or "《コイン5000万 ON》"
+    local state_coin5 = toggle_coin5 and "《コイン1億 OFF》" or "《コイン1億 ON》"
+    local state_coin6 = toggle_coin6 and "《コイン2億 OFF》" or "《コイン2億 ON》"
     ww=gg.multiChoice({
         state_coin1,
         state_coin2,
@@ -113,7 +107,7 @@ function BB()
         state_coin4,
         state_coin5,
         state_coin6,
-        "戻る",
+        "《戻る》",
     })
     if ww == nil then return end
     if ww[1] == true then m1() end
@@ -130,72 +124,72 @@ end
 
 function m1()
     if toggle_coin1 then
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
             gg.toast("コイン50万 OFF")
             else
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "D1 D2 F8 17")
+            setHexMemory("libcocos2dcpp.so", 0x1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "4A 7F F8 17")
             gg.toast("コイン50万 ON")
     end
     toggle_coin1 = not toggle_coin1
 end
 function m2()
     if toggle_coin2 then
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
             gg.toast("コイン100万 OFF")
             else
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 48 88 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 01 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "D1 D2 F8 17")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 48 88 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 01 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "4A 7F F8 17")
             gg.toast("コイン100万 ON")
     end
     toggle_coin2 = not toggle_coin2
 end
  function m3()
     if toggle_coin3 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
             gg.toast("コイン1000万 OFF")
     else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 D0 92 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "18 10 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "FE D2 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "01 2D F8 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 D0 92 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "18 10 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "4A 7F F8 17")
         gg.toast("コイン1000万 ON")
 end
     toggle_coin3 = not toggle_coin3
 end
 function m4()
     if toggle_coin4 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
         gg.toast("コイン5000万 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 10 9E  52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "58 5F A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "FE D2 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "01 2D F8 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E  52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "01 2D F8 17")
         gg.toast("コイン5000万 ON")
 end
     
@@ -204,18 +198,18 @@ end
 
 function m5()
     if toggle_coin5 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
         gg.toast("コイン1億 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 20 9C 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "B8 BE A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "FE 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "01 2D F8 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 20 9C 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "B8 BE A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "4A 7F F8 17")
         gg.toast("コイン1億 ON")
 end
     
@@ -224,18 +218,18 @@ end
 
 function m6()
     if toggle_coin6 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 10 9E 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "58 5F A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
         gg.toast("コイン2億 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 40 98 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "78 7D A1 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "FE D2 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "C9 89 F7 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 40 98 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "78 7D A1 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "4A 7F F8 17")
         gg.toast("コイン2億 ON")
 end
     
@@ -243,12 +237,12 @@ end
 end
 
 function CC()
-    local state_Medal1 = toggle_Medal1 and "メダル50万 OFF" or "メダル50万 ON"
-    local state_Medal2 = toggle_Medal2 and "メダル100万 OFF" or "メダル100万 ON"
-    local state_Medal3 = toggle_Medal3 and "メダル1000万 OFF" or "メダル1000万 ON"
-    local state_Medal4 = toggle_Medal4 and "メダル5000万 OFF" or "メダル5000万 ON"
-    local state_Medal5 = toggle_Medal5 and "メダル1億 OFF" or "メダル1億 ON"
-    local state_Medal6 = toggle_Medal6 and "メダル2億 OFF" or "メダル2億 ON"
+    local state_Medal1 = toggle_Medal1 and "《メダル50万 OFF》" or "《メダル50万 ON》"
+    local state_Medal2 = toggle_Medal2 and "《メダル100万 OFF》" or "《メダル100万 ON》"
+    local state_Medal3 = toggle_Medal3 and "《メダル1000万 OFF》" or "《メダル1000万 ON》"
+    local state_Medal4 = toggle_Medal4 and "《メダル5000万 OFF》" or "《メダル5000万 ON》"
+    local state_Medal5 = toggle_Medal5 and "《メダル1億 OFF》" or "《メダル1億 ON》"
+    local state_Medal6 = toggle_Medal6 and "《メダル2億 OFF》" or "《メダル2億 ON》"
     aa=gg.multiChoice({
         state_Medal1,
         state_Medal2,
@@ -256,7 +250,7 @@ function CC()
         state_Medal4,
         state_Medal5,
         state_Medal6,
-        "戻る",
+        "《戻る》",
     })
     if aa == nil then return end
     if aa[1] == true then M1() end
@@ -273,72 +267,72 @@ end
 
 function M1()
     if toggle_Medal1 then
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
             gg.toast("メダル50万 OFF")
             else
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "7A 2F F8 17")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "7A 2F F8 17")
             gg.toast("メダル50万 ON")
     end
     toggle_Medal1 = not toggle_Medal1
 end
 function M2()
     if toggle_Medal2 then
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
             gg.toast("メダル100万 OFF")
             else
-            setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "7A 2F F8 17")
+            setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "7A 2F F8 17")
             gg.toast("メダル100万 ON")
     end
     toggle_Medal2 = not toggle_Medal2
 end
  function M3()
     if toggle_Medal3 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
             gg.toast("メダル1000万 OFF")
     else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "01 2D F8 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "01 2D F8 17")
         gg.toast("メダル1000万 ON")
 end
     toggle_Medal3 = not toggle_Medal3
 end
 function M4()
     if toggle_Medal4 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
         gg.toast("メダル5000万 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "01 2D F8 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "01 2D F8 17")
         gg.toast("メダル5000万 ON")
 end
     
@@ -347,18 +341,18 @@ end
 
 function M5()
     if toggle_Medal5 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
         gg.toast("メダル1億 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "01 2D F8 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "01 2D F8 17")
         gg.toast("メダル1億 ON")
 end
     
@@ -367,18 +361,18 @@ end
 
 function M6()
     if toggle_Medal6 then
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "F8 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "F8 03 01 2A")
         gg.toast("メダル2億 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x187423C, "18 24 94 52")
-            setHexMemory("libcocos2dcpp.so", 0x1874240, "F8 00 A0 72")
-            setHexMemory("libcocos2dcpp.so", 0x1874244, "2E 2D 07 14")
-            setHexMemory("libcocos2dcpp.so", 0x1874248, "1F 20 03 D5")
-            setHexMemory("libcocos2dcpp.so", 0x1A3F6F8, "C9 89 F7 17")
+        setHexMemory("libcocos2dcpp.so", 1882970, "18 24 94 52")
+            setHexMemory("libcocos2dcpp.so", 0x1882974, "F8 00 A0 72")
+            setHexMemory("libcocos2dcpp.so", 0x1882978, "B5 80 07 14")
+            setHexMemory("libcocos2dcpp.so", 0x188297C, "1F 20 03 D5")
+            setHexMemory("libcocos2dcpp.so", 0x1A62C48, "C9 89 F7 17")
         gg.toast("メダル2億 ON")
 end
     
@@ -386,15 +380,15 @@ end
 end
 
 function DD()
-    local state_soku = toggle_soku and "即終了 OFF" or "即終了 ON"
-    local state_soku1 = toggle_soku1 and "繋ぎ終了 OFF" or "繋ぎ終了 ON"
-    local state_tumumax = toggle_tumumax and "ツムレベルMAX OFF" or "ツムレベルMAX ON"
-    local state_payermax = toggle_payermax and "プレイヤーレベルMAX OFF" or "プレイヤーレベルMAX ON"
-    local state_gs = toggle_gs and "ガチャ演出スキップ OFF" or "ガチャ演出スキップ ON"
-    local state_rs = toggle_rs and "リザルトスキップ OFF" or "リザルトスキップ ON"
-    local state_sp1 = toggle_sp1 and "倍速3 OFF" or "倍速3 ON"
-    local state_sp2 = toggle_sp2 and "倍速5 OFF" or "倍速5 ON"
-    local state_sp3 = toggle_sp3 and "倍速10 OFF" or "倍速10 ON"
+    local state_soku = toggle_soku and "《即終了 OFF》" or "《即終了 ON》"
+    local state_soku1 = toggle_soku1 and "《繋ぎ終了 OFF》" or "《繋ぎ終了 ON》"
+    local state_tumumax = toggle_tumumax and "《ツムレベルMAX OFF》" or "《ツムレベルMAX ON》"
+    local state_payermax = toggle_payermax and "《プレイヤーレベルMAX OFF》" or "《プレイヤーレベルMAX ON》"
+    local state_gs = toggle_gs and "《ガチャ演出スキップ OFF》" or "《ガチャ演出スキップ ON》"
+    local state_rs = toggle_rs and "《リザルトスキップ OFF》" or "《リザルトスキップ ON》"
+    local state_sp1 = toggle_sp1 and "《倍速3 OFF》" or "《倍速3 ON》"
+    local state_sp2 = toggle_sp2 and "《倍速5 OFF》" or "《倍速5 ON》"
+    local state_sp3 = toggle_sp3 and "《倍速10 OFF》" or "《倍速10 ON》"
     xx=gg.multiChoice({
         state_soku,
         state_soku1,
@@ -405,7 +399,7 @@ function DD()
         state_sp1,
         state_sp2,
         state_sp3,
-        "戻る",
+        "《戻る》",
     })
     if xx == nil then return end
     if xx[1] == true then sh1() end
@@ -425,30 +419,30 @@ end
 
 function sh1()
     if toggle_soku then
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 20 21 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 20 21 1E")
             gg.toast("即終了 OFF")
             else
-            setHexMemory("libcocos2dcpp.so", 0x23204C8, "00 10 24 1E")
+            setHexMemory("libcocos2dcpp.so", 0x230E6FC, "00 10 24 1E")
             gg.toast("即終了 ON")
     end
     toggle_soku = not toggle_soku
 end
  function sh2()
     if toggle_soku1 then
-        setHexMemory("libcocos2dcpp.so", 0x1828EBC, "21 07 00 54")
+        setHexMemory("libcocos2dcpp.so", 0x1A801F8, "21 07 00 54")
         gg.toast("繋ぎ終了 OFF")
     else
-        setHexMemory("libcocos2dcpp.so", 0x1828EBC, "20 07 00 54")
+        setHexMemory("libcocos2dcpp.so", 0x1A801F8, "20 07 00 54")
         gg.toast("繋ぎ終了 ON")
 end
     toggle_soku1 = not toggle_soku1
 end
 function sh3()
     if toggle_tumumax then
-        setHexMemory("libcocos2dcpp.so", 0x18238A4, "21 05 00 11")
+        setHexMemory("libcocos2dcpp.so", 0x1A7B14C, "21 05 00 11")
         gg.toast("ツムレベルMAX OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x18238A4, "01 6A 98 52")
+        setHexMemory("libcocos2dcpp.so", 0x1A7B14C, "01 6A 98 52")
         gg.toast("ムツレベルMAX ON")
 end
     
@@ -467,10 +461,10 @@ end
 
 function sh5()
      if toggle_gs then
-        setHexMemory("libcocos2dcpp.so", 0x1861830, "FF 43 01 D1")
+        setHexMemory("libcocos2dcpp.so", 0x218B9EC, "FF 43 01 D1")
         gg.toast("ガチャ演出スキップ OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x1861830, "C0 03 5F D6")
+        setHexMemory("libcocos2dcpp.so", 0x218B9EC, "C0 03 5F D6")
         gg.toast("ガチャ演出スキップ ON")
     end
         toggle_gs = not toggle_gs
@@ -478,10 +472,10 @@ end
 
 function sh6()
      if toggle_rs then
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "F4 03 01 2A")
+        setHexMemory("libcocos2dcpp.so", 0x1A8CCA8, "88 01 00 34")
         gg.toast("リザルトスキップ OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x18135E0, "34 00 80 52")
+        setHexMemory("libcocos2dcpp.so", 0x1A8CCA8, "A8 01 00 35")
         gg.toast("リザルトスキップ ON")
     end
         toggle_rs = not toggle_rs
@@ -489,10 +483,10 @@ end
 
 function sh7()
      if toggle_sp1 then
-        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 18 21 1E")
+        setHexMemory("libcocos2dcpp.so", 0x232C44C, "00 18 21 1E")
         gg.toast("倍速3 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 D0 29 1E")
+        setHexMemory("libcocos2dcpp.so", 0x232C44C, "00 D0 29 1E")
         gg.toast("倍速3 ON")
     end
         toggle_sp1 = not toggle_sp1
@@ -500,10 +494,10 @@ end
 
 function sh8()
      if toggle_sp2 then
-        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 18 21 1E")
+        setHexMemory("libcocos2dcpp.so", 0x232C44C, "00 18 21 1E")
         gg.toast("倍速5 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 90 20 1E")
+        setHexMemory("libcocos2dcpp.so", 0x232C44C, "00 90 20 1E")
         gg.toast("倍速5 ON")
     end
         toggle_sp2 = not toggle_sp2
@@ -511,10 +505,10 @@ end
 
 function sh9()
      if toggle_sp3 then
-        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 18 21 1E")
+        setHexMemory("libcocos2dcpp.so", 0x232C44C, "00 18 21 1E")
         gg.toast("倍速10 OFF")
         else
-        setHexMemory("libcocos2dcpp.so", 0x2341788, "00 10 24 1E")
+        setHexMemory("libcocos2dcpp.so", 0x232C44C, "00 10 24 1E")
         gg.toast("倍速10 ON")
     end
         toggle_sp3 = not toggle_sp3
